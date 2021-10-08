@@ -25,10 +25,10 @@ public class Electricity {
     private ComplexNumber SpowerA2C=new ComplexNumber(0,0);
     private ComplexNumber SpowerC2B=new ComplexNumber(0,0);
 
-    private double voltageA=227;
-    private double voltageB=220;
-    private double voltageB1=220;
-    private double voltageC=220;
+    private double voltageA=110;
+    private double voltageB=110;
+    private double voltageB1=110;
+    private double voltageC=110;
 
 
     public Electricity(ComplexNumber spowerLoadB, ComplexNumber spowerLoadC) {
@@ -95,28 +95,28 @@ public class Electricity {
 
     public boolean constraintCheck(){
         Boolean flag =true;
-        if(voltageA>242||voltageA<198){
+        if(voltageA>115.5||voltageA<104.5){
             flag=false;
          //   System.out.println("A点电压不满足约束");
         }
-        if(voltageB>242||voltageB<198){
+        if(voltageB>115.5||voltageB<104.5){
             flag=false;
           //  System.out.println("B点电压不满足约束");
         }
-        if(voltageC>242||voltageC<198){
+        if(voltageC>115.5||voltageC<104.5){
             flag=false;
           //  System.out.println("C点电压不满足约束");
         }
                                                                             //52.774
-        if(Math.pow(Math.pow(SpowerA2B.getReal(),2)+Math.pow(SpowerA2B.getImag(),2),0.5)>192){
+        if(Math.pow(Math.pow(SpowerA2B.getReal(),2)+Math.pow(SpowerA2B.getImag(),2),0.5)>75){
             flag=false;
           //  System.out.println("A2B的线路容量过载");
         }
-        if(Math.pow(Math.pow(SpowerA2C.getReal(),2)+Math.pow(SpowerA2C.getImag(),2),0.5)>192){
+        if(Math.pow(Math.pow(SpowerA2C.getReal(),2)+Math.pow(SpowerA2C.getImag(),2),0.5)>75){
             flag=false;
           //  System.out.println("A2C的线路容量过载");
         }
-        if(Math.pow(Math.pow(SpowerC2B.getReal(),2)+Math.pow(SpowerC2B.getImag(),2),0.5)>192){
+        if(Math.pow(Math.pow(SpowerC2B.getReal(),2)+Math.pow(SpowerC2B.getImag(),2),0.5)>75){
             flag=false;
           //  System.out.println("C2B的线路容量过载");
         }
