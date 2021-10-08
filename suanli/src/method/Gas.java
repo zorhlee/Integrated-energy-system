@@ -16,9 +16,9 @@ public class Gas {
     private double pressureNode2=0;
     private double pressureNode1=0;
     private double compressionRatio=1;
-    private double length1=33*Math.pow(10,3);
-    private double length2=34.3*Math.pow(10,3);
-    private double length3=88.7*Math.pow(10,3);
+    private double length1=30*Math.pow(10,3);
+    private double length2=30*Math.pow(10,3);
+    private double length3=80*Math.pow(10,3);
     private double flowNode1;
     private double flowNode4;
     private double flowNode5;
@@ -34,7 +34,7 @@ public class Gas {
           tolflowNode4=flowtoGenerator+flowNode4;
           flowNode5 =flowNode1+tolflowNode4;
 
-        pressureNode5=4*Math.pow(10,6);
+        pressureNode5=5.5*Math.pow(10,6);
         pressureNode4=Math.pow((Math.pow(pressureNode5,2)-Math.pow(flowNode5*Math.pow(length3,0.5)/0.0216,2)),0.5);
         pressureNode3=Math.pow((Math.pow(pressureNode4,2)-Math.pow(flowNode1*Math.pow(length2,0.5)/0.0216,2)),0.5);
         pressureNode2=pressureNode3*compressionRatio;
@@ -50,15 +50,15 @@ public class Gas {
     }
     public boolean constraintCheck(){
         Boolean flag=true;
-        if(pressureNode5>6*Math.pow(10,6)){
+        if(pressureNode5>5.5*Math.pow(10,6)&&pressureNode5<5*Math.pow(10,6)){
             flag=false;
          //  System.out.println("节点5压力不满足约束");
         }
-        if(pressureNode1>6*Math.pow(10,6)){
+        if(pressureNode1>5*Math.pow(10,6)&&pressureNode1<3*Math.pow(10,6)){
             flag=false;
         //    System.out.println("节点1压力不满足约束");
         }
-        if(pressureNode4>6*Math.pow(10,6)){
+        if(pressureNode4>5*Math.pow(10,6)&&pressureNode4<3*Math.pow(10,6)){
             flag=false;
          //  System.out.println("节点4压力不满足约束");
         }

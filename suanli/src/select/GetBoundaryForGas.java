@@ -18,7 +18,7 @@ public class GetBoundaryForGas {
 
         //给压缩机压缩比设值为1.5，给负荷4流量设值为6.96
         gas.setCompressionRatio(1);
-        gas.setFlowtoGenerator(16.96);
+        gas.setFlowtoGenerator(0);
 
         for(double i=0;i<=300;i++){
             gas.setFlowNode1(i);

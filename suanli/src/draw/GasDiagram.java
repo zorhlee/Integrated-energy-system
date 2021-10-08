@@ -23,7 +23,7 @@ public class GasDiagram {
 
         sheet.getCellRange("B1").setValue("flowNode4");
         int i=2;
-        HashMap map1= GetBoundaryForGas.calculationBoundary();
+        HashMap map1= GetBoundary.calculationLowBoundary();
         Set<Double> keys = map1.keySet();
         for(Double key :keys){
             String b= String.valueOf(map1.get(key));
@@ -38,7 +38,6 @@ public class GasDiagram {
             j++;
         }
 
-/*
         sheet.getCellRange("D1").setValue("flowNode4");
         int i1=2;
         HashMap map2= GetBoundary.calculationUpBoundary(map1);
@@ -54,9 +53,9 @@ public class GasDiagram {
             String b= String.valueOf(key);
             sheet.getCellRange("C"+j1).setValue(b);
             j1++;
-        }*/
+        }
 
-        workbook.saveToFile("GasDiagram04.xlsx",ExcelVersion.Version2010);
+        workbook.saveToFile("123456.xlsx",ExcelVersion.Version2010);
         workbook.dispose();
     }
 }
