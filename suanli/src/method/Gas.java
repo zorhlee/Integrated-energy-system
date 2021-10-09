@@ -35,10 +35,10 @@ public class Gas {
           flowNode5 =flowNode1+tolflowNode4;
 
         pressureNode5=5.5*Math.pow(10,6);
-        pressureNode4=Math.pow((Math.pow(pressureNode5,2)-Math.pow(flowNode5*Math.pow(length3,0.5)/0.0216,2)),0.5);
-        pressureNode3=Math.pow((Math.pow(pressureNode4,2)-Math.pow(flowNode1*Math.pow(length2,0.5)/0.0216,2)),0.5);
+        pressureNode4=Math.pow((Math.pow(pressureNode5,2)-Math.pow(23*flowNode5*Math.pow(length3,0.5)/0.0216,2)),0.5);
+        pressureNode3=Math.pow((Math.pow(pressureNode4,2)-Math.pow(23*flowNode1*Math.pow(length2,0.5)/0.0216,2)),0.5);
         pressureNode2=pressureNode3*compressionRatio;
-        pressureNode1=Math.pow((Math.pow(pressureNode2,2)-Math.pow(flowNode1*Math.pow(length1,0.5)/0.0216,2)),0.5);
+        pressureNode1=Math.pow((Math.pow(pressureNode2,2)-Math.pow(23*flowNode1*Math.pow(length1,0.5)/0.0216,2)),0.5);
 /*        System.out.println("节点压力5:"+pressureNode5);
         System.out.println("节点压力4:"+pressureNode4);
         System.out.println("节点压力3:"+pressureNode3);
@@ -50,30 +50,31 @@ public class Gas {
     }
     public boolean constraintCheck(){
         Boolean flag=true;
-        if(pressureNode5>5.5*Math.pow(10,6)&&pressureNode5<5*Math.pow(10,6)){
+        if(pressureNode5>5.5*Math.pow(10,6)||pressureNode5<5*Math.pow(10,6)){
             flag=false;
          //  System.out.println("节点5压力不满足约束");
         }
-        if(pressureNode1>5*Math.pow(10,6)&&pressureNode1<3*Math.pow(10,6)){
+        if(pressureNode1>5*Math.pow(10,6)||pressureNode1<3*Math.pow(10,6)){
             flag=false;
         //    System.out.println("节点1压力不满足约束");
         }
-        if(pressureNode4>5*Math.pow(10,6)&&pressureNode4<3*Math.pow(10,6)){
+        if(pressureNode4>5*Math.pow(10,6)||pressureNode4<3*Math.pow(10,6)){
             flag=false;
          //  System.out.println("节点4压力不满足约束");
         }
-        if(flowNode1>300){
+        if(flowNode1>10){
             flag=false;
          //   System.out.println("节点1流量不满足约束");
         }
-        if(tolflowNode4>300){
+        if(tolflowNode4>10){
             flag=false;
           //    System.out.println("节点4流量不满足约束");
         }
-        if((Math.pow(pressureNode5,2)-Math.pow(flowNode5*Math.pow(length3,0.5)/0.0216,2))<0||(Math.pow(pressureNode4,2)-Math.pow(flowNode1*Math.pow(length2,0.5)/0.0216,2))<0 ||(Math.pow(pressureNode2,2)-Math.pow(flowNode1*Math.pow(length1,0.5)/0.0216,2)<0)){
+        if((Math.pow(pressureNode5,2)-Math.pow(23*flowNode5*Math.pow(length3,0.5)/0.0216,2))<0||(Math.pow(pressureNode4,2)-Math.pow(23*flowNode1*Math.pow(length2,0.5)/0.0216,2))<0 ||(Math.pow(pressureNode2,2)-Math.pow(23*flowNode1*Math.pow(length1,0.5)/0.0216,2)<0)){
             flag=false;
          //   System.out.println("无实数解");
         }
+        if((flowNode1+tolflowNode4)>16) flag=false;
 
           return flag;
     }

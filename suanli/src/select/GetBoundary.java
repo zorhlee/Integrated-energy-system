@@ -18,17 +18,17 @@ public class GetBoundary {
         Gas gas =new Gas(0,0);
 
         //给压缩机压缩比设值为1.5，给负荷4流量设值为6.96
-        gas.setCompressionRatio(1);
+        gas.setCompressionRatio(1.5);
         gas.setFlowtoGenerator(0);
 
-        for(double i=0;i<=300;i++){
+        for(double i=0;i<=50;i+=0.05){
             gas.setFlowNode1(i);
-            double j=50;
+            double j=0;
             do{
                 gas.setFlowNode4(j);
                 gas.naturalGasFlowCalculation();
-                j++;
-                if (j>300){
+                j+=0.05;
+                if (j>50){
                    // System.out.println("当节点1的值为"+gas.getFlowNode1()+"时，不存在边界");
                     break;
                 }
@@ -46,7 +46,7 @@ public class GetBoundary {
         Gas gas =new Gas(0,0);
 
         //给压缩机压缩比设值为1.5，给负荷4流量设值为6.96
-        gas.setCompressionRatio(1);
+        gas.setCompressionRatio(1.5);
         gas.setFlowtoGenerator(0);
 
         for(Double key : keys){
@@ -55,9 +55,9 @@ public class GetBoundary {
             do{
                 gas.setFlowNode4(j);
                 gas.naturalGasFlowCalculation();
-                j++;
-                if (j>300){
-                    map2.put(gas.getFlowNode1(),300);
+                j+=0.05;
+                if (j>50){
+                    map2.put(gas.getFlowNode1(),50);
                   //  System.out.println("("+gas.getFlowNode1()+"，"+300+")");
                     break;
                 }

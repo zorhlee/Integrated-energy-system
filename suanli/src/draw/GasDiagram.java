@@ -55,7 +55,7 @@ public class GasDiagram {
             j1++;
         }
 
-        workbook.saveToFile("123456.xlsx",ExcelVersion.Version2010);
+        workbook.saveToFile("天然气03.xlsx",ExcelVersion.Version2010);
         workbook.dispose();
     }
 }
