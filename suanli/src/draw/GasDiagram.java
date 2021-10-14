@@ -56,7 +56,7 @@ public class GasDiagram {
             j1++;
         }*/
 
-        workbook.saveToFile("GasDiagram04.xlsx",ExcelVersion.Version2010);
+        workbook.saveToFile("GasDiagram-test.xlsx",ExcelVersion.Version2010);
         workbook.dispose();
     }
 }

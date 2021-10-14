@@ -39,7 +39,7 @@ public class ElectricityDiagram {
             j++;
         }
 
-        workbook.saveToFile("ElectricityDiagram220kv04.xlsx", ExcelVersion.Version2010);
+        workbook.saveToFile("ElectricityDiagram220kvt 0.xlsx", ExcelVersion.Version2010);
         workbook.dispose();
     }
 }
