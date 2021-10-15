@@ -24,7 +24,7 @@ public class ElectricityDiagram {
 
         sheet.getCellRange("B1").setValue("SpowerLoadB");
         int i=2;
-        HashMap map1= GetBoundaryForElectricity.calculationUpBoundary();
+        HashMap map1= GetBoundaryForElectricity.calculationLowBoundary();
         Set<Double> keys = map1.keySet();
         for(Double key :keys){
             String b= String.valueOf(map1.get(key));
@@ -39,7 +39,26 @@ public class ElectricityDiagram {
             j++;
         }
 
-        workbook.saveToFile("ElectricityDiagram220kv04.xlsx", ExcelVersion.Version2010);
+        sheet.getCellRange("D1").setValue("SpowerLoadB");
+        int i1=2;
+        HashMap map2= GetBoundaryForElectricity.calculationUpBoundary(map1);
+        Set<Double> keys2 = map2.keySet();
+        for(Double key :keys2){
+            String b= String.valueOf(map2.get(key));
+            sheet.getCellRange("D"+i1).setValue(b);
+            i1++;
+        }
+        sheet.getCellRange("C1").setValue("SpowerLoadC");
+        int j1=2;
+        for(Double key :keys2){
+            String b= String.valueOf(key);
+            sheet.getCellRange("C"+j1).setValue(b);
+            j1++;
+        }
+
+
+
+        workbook.saveToFile("ElectricityDiagram-test02.xlsx", ExcelVersion.Version2010);
         workbook.dispose();
     }
 }

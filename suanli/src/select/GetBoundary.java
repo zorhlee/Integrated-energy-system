@@ -15,18 +15,18 @@ import java.util.Set;
 public class GetBoundary {
     public static HashMap calculationLowBoundary(){
         HashMap<Double, Double> map1 = new HashMap<>();
-        Gas gas =new Gas(0,0);
+                Gas gas =new Gas(0,0);
 
-        //给压缩机压缩比设值为1.5，给负荷4流量设值为6.96
-        gas.setCompressionRatio(1.5);
-        gas.setFlowtoGenerator(0);
+                //给压缩机压缩比设值为1.5，给负荷4流量设值为6.96
+                gas.setCompressionRatio(1.4);
+                gas.setFlowtoGenerator(0);
 
-        for(double i=0;i<=50;i+=0.05){
-            gas.setFlowNode1(i);
-            double j=0;
-            do{
-                gas.setFlowNode4(j);
-                gas.naturalGasFlowCalculation();
+                for(double i=0;i<=50;i+=0.05){
+                    gas.setFlowNode1(i);
+                    double j=0;
+                    do{
+                        gas.setFlowNode4(j);
+                        gas.naturalGasFlowCalculation();
                 j+=0.05;
                 if (j>50){
                    // System.out.println("当节点1的值为"+gas.getFlowNode1()+"时，不存在边界");
@@ -46,7 +46,7 @@ public class GetBoundary {
         Gas gas =new Gas(0,0);
 
         //给压缩机压缩比设值为1.5，给负荷4流量设值为6.96
-        gas.setCompressionRatio(1.5);
+        gas.setCompressionRatio(1.4);
         gas.setFlowtoGenerator(0);
 
         for(Double key : keys){

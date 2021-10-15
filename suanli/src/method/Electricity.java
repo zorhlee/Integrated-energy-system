@@ -103,7 +103,7 @@ public class Electricity {
             flag=false;
           //  System.out.println("B点电压不满足约束");
         }
-        if(voltageC>115.5||voltageC<104.5){
+        if(voltageC>110||voltageC<99){
             flag=false;
           //  System.out.println("C点电压不满足约束");
         }

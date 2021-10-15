@@ -74,7 +74,7 @@ public class Gas {
             flag=false;
          //   System.out.println("无实数解");
         }
-        if((flowNode1+tolflowNode4)>16) flag=false;
+        if((flowNode1+tolflowNode4)>14.95) flag=false;
 
           return flag;
     }
