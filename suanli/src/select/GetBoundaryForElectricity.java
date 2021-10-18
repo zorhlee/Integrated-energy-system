@@ -25,21 +25,21 @@ public class GetBoundaryForElectricity {
         //给B处燃气发电机设值，最大功率为30MW,给C处压缩机供电赋值，61MW
        ComplexNumber complexNumber2 = new ComplexNumber(50,0);
        electricity.setSpowerLoadG2B(complexNumber2);
-        ComplexNumber complexNumber3 = new ComplexNumber(10,0);
+        ComplexNumber complexNumber3 = new ComplexNumber(10.96,0);
         electricity.setSpowerLoadC2compression(complexNumber3);
 
         for(double i=0;i<=350;i=i+1){
         //    complexNumber.setReal(i/Math.sqrt(2));
         //    complexNumber.setImag(i/Math.sqrt(2));
-            complexNumber.setReal(i);
-            complexNumber.setImag(0);
+            complexNumber.setReal(i*0.9);
+            complexNumber.setImag(i*0.43);
             electricity.setSpowerLoadB(complexNumber);
             double j=0;
             do{
              //   complexNumber1.setReal(j/Math.sqrt(2));
            //     complexNumber1.setImag(j/Math.sqrt(2));
-               complexNumber1.setReal(j);
-                complexNumber1.setImag(0);
+               complexNumber1.setReal(j*0.9);
+                complexNumber1.setImag(j*0.43);
                 electricity.setSpowerLoadC(complexNumber1);
                 electricity.powerSystemsFlowCalculation();
                 j=j+1;
@@ -69,20 +69,24 @@ public class GetBoundaryForElectricity {
         //给B处燃气发电机设值，最大功率为30MW,给C处压缩机供电赋值，61MW
         ComplexNumber complexNumber2 = new ComplexNumber(50,0);
         electricity.setSpowerLoadG2B(complexNumber2);
-        ComplexNumber complexNumber3 = new ComplexNumber(10,0);
+        ComplexNumber complexNumber3 = new ComplexNumber(10.96,0);
         electricity.setSpowerLoadC2compression(complexNumber3);
 
         for(Double key : keys){
 
-            complexNumber.setReal(key);
+            //complexNumber.setReal(key);
+            complexNumber.setReal(key*0.9);
+            complexNumber.setImag(key*0.43);
+
             electricity.setSpowerLoadB(complexNumber);
 
             double j= (double) map1.get(key);
 
             do{
 
-                complexNumber1.setReal(j);
-                complexNumber1.setImag(0);
+                complexNumber1.setReal(j*0.9);
+                complexNumber1.setImag(j*0.43);
+
                 electricity.setSpowerLoadC(complexNumber1);
                 electricity.powerSystemsFlowCalculation();
                 j=j+1;

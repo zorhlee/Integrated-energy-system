@@ -58,7 +58,7 @@ public class ElectricityDiagram {
 
 
 
-        workbook.saveToFile("ElectricityDiagram-test02.xlsx", ExcelVersion.Version2010);
+        workbook.saveToFile("ElectricityDiagram-test.xlsx", ExcelVersion.Version2010);
         workbook.dispose();
     }
 }
