@@ -18,15 +18,15 @@ public class Diagramup {
         Workbook workbook = new Workbook();
         Worksheet sheet = workbook.getWorksheets().get(0);
 
-        sheet.getCellRange("A1").setValue("FlowNode4");
+        sheet.getCellRange("A1").setValue("FlowtoGenerator");
         sheet.getCellRange("B1").setValue("FlowNode1");
-        sheet.getCellRange("C1").setValue("FlowtoGenerator");
+        sheet.getCellRange("C1").setValue("FlowNode4");
         sheet.getCellRange("D1").setValue("CompressionRatio");
         sheet.getCellRange("E1").setValue("SpowerLoadB(");
         sheet.getCellRange("F1").setValue("SpowerLoadC");
         int i=2;
         double[][] doubles = GetBoundaryD.calculationUpBoundary();
-        for(int k1=0;k1<10000;k1++){
+        for(int k1=0;k1<20000;k1++){
             String b= String.valueOf(doubles[k1][0]);
             sheet.getCellRange("A"+i).setValue(b);
             b= String.valueOf(doubles[k1][1]);
