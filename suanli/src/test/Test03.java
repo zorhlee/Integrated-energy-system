@@ -12,9 +12,11 @@ import method.Electricity;
  **/
 public class Test03 {
     public static void main(String[] args) {
-        ComplexNumber complexNumber = new ComplexNumber(247, 247);
-        ComplexNumber complexNumber1 = new ComplexNumber(0, 0);
+        ComplexNumber complexNumber = new ComplexNumber(0,0);
+        ComplexNumber complexNumber1 = new ComplexNumber(500, 0);
         Electricity electricity = new Electricity(complexNumber,complexNumber1);
+        ComplexNumber complexNumber2 = new ComplexNumber(30000,0);
+        electricity.setSpowerLoadG2B(complexNumber2);
         electricity.powerSystemsFlowCalculation();
         System.out.println(electricity.constraintCheck());
     }

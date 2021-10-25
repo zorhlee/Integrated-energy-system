@@ -97,28 +97,28 @@ public class Electricity {
         Boolean flag =true;
         if(voltageA>242||voltageA<198){
             flag=false;
-         //   System.out.println("A点电压不满足约束");
+            System.out.println("A点电压不满足约束");
         }
         if(voltageB>242||voltageB<198){
             flag=false;
-          //  System.out.println("B点电压不满足约束");
+            System.out.println("B点电压不满足约束");
         }
         if(voltageC>242||voltageC<198){
             flag=false;
-          //  System.out.println("C点电压不满足约束");
+            System.out.println("C点电压不满足约束");
         }
                                                                             //52.774
         if(Math.pow(Math.pow(SpowerA2B.getReal(),2)+Math.pow(SpowerA2B.getImag(),2),0.5)>192){
             flag=false;
-          //  System.out.println("A2B的线路容量过载");
+           System.out.println("A2B的线路容量过载");
         }
         if(Math.pow(Math.pow(SpowerA2C.getReal(),2)+Math.pow(SpowerA2C.getImag(),2),0.5)>192){
             flag=false;
-          //  System.out.println("A2C的线路容量过载");
+            System.out.println("A2C的线路容量过载");
         }
         if(Math.pow(Math.pow(SpowerC2B.getReal(),2)+Math.pow(SpowerC2B.getImag(),2),0.5)>192){
             flag=false;
-          //  System.out.println("C2B的线路容量过载");
+            System.out.println("C2B的线路容量过载");
         }
         return flag;
     }
