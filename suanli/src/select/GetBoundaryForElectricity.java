@@ -22,9 +22,9 @@ public class GetBoundaryForElectricity {
         Electricity electricity = new Electricity(complexNumber,complexNumber1);
 
         //给B处燃气发电机设值，最大功率为30MW,给C处压缩机供电赋值，61MW
-       ComplexNumber complexNumber2 = new ComplexNumber(30,0);
+       ComplexNumber complexNumber2 = new ComplexNumber(0,0);
        electricity.setSpowerLoadG2B(complexNumber2);
-        ComplexNumber complexNumber3 = new ComplexNumber(0,0);
+        ComplexNumber complexNumber3 = new ComplexNumber(85,0);
         electricity.setSpowerLoadC2compression(complexNumber3);
 
         for(double i=0;i<=350;i=i+1){
